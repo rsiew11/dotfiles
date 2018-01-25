@@ -57,3 +57,6 @@ command WQ wq
 command Wq wq
 command W w
 command Q q
+
+colorscheme koehler
+au BufReadPost *.srp set syntax=c "force highlighting for serpent"
