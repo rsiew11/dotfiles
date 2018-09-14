@@ -59,4 +59,4 @@ command W w
 command Q q
 
 colorscheme koehler
-au BufReadPost *.srp set syntax=C "force highlighting for serpent"
+au BufReadPost *.srp set syntax=c "force highlighting for serpent"
