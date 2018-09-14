@@ -1,7 +1,13 @@
-# Setting PATH for Python 2.7
+# Setting PATH for Python 2.7 and for homebrew
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}:/usr/local/bin:$PATH"
 export PATH
+
+#source the 349 stuff
+source ~/.bashrc
+
+#Virtualenv/VirtualenvWrapper
+source /usr/local/bin/virtualenvwrapper.sh
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -130,3 +136,31 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+# for 349 to fix the stuff
+alias fixftdi="sudo kextunload -bundle-id com.apple.driver.AppleUSBFTDI"
+
+# setup for the ftditerm.py file
+alias ftdi="sudo ftditerm.py -b 115200 --lf"
+
+# kill all instances of make openocd
+alias rip="killall -9 make openocd"
+
+
+
+
+
+[ -s "/Users/rsiewhew/.scm_breeze/scm_breeze.sh" ] && source "/Users/rsiewhew/.scm_breeze/scm_breeze.sh"
+
+
+
+
+export PATH=$PATH:/Users/rsiewhew/bin
+export SERPENTPATH="/Users/rsiewhew/serpent/lib:/Users/rsiewhew/serpent/programs:/Users/rsiewhew/serpent/wxslib"
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+export PATH="$HOME/.cargo/bin:$PATH"

@@ -1,7 +1,7 @@
 imap jj <Esc>
 
 " Helpful information: cursor position in bottom right, line numbers on left
-set number
+set number "relativenumber
 
 " Indent as intelligently as vim knows how
 set smartindent
@@ -12,8 +12,8 @@ set showcmd
 " Add your own changes below...
 set t_Co=256 "256 color
 set encoding=utf-8 "UTF-8 character encoding
-set tabstop=4  "4 space tabs
-set shiftwidth=4  "4 space shift
+"set tabstop=4  "4 space tabs
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab "make tabs = 4 spaces
 set softtabstop=4  "Tab spaces in no hard tab mode
 set expandtab  " Expand tabs into spaces
 set autoindent  "autoindent on new lines
@@ -57,3 +57,6 @@ command WQ wq
 command Wq wq
 command W w
 command Q q
+
+colorscheme koehler
+au BufReadPost *.srp set syntax=C "force highlighting for serpent"
