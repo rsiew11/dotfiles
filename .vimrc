@@ -1,7 +1,8 @@
 imap jj <Esc>
 
 " Helpful information: cursor position in bottom right, line numbers on left
-set number "relativenumber
+set number relativenumber
+set cc=80 "80 char limit line
 
 " Indent as intelligently as vim knows how
 set smartindent
