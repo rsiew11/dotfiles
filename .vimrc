@@ -1,4 +1,6 @@
 imap jj <Esc>
+imap Jj <Esc>
+imap jJ <Esc>
 
 " Helpful information: cursor position in bottom right, line numbers on left
 set number
