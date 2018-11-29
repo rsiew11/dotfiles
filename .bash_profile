@@ -13,7 +13,8 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 # export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
-export GREP_OPTIONS='--color=auto'
+#export GREP_OPTIONS='--color=auto'
+unset GREP_OPTIONS
 
 export PS1="\[\033[38;5;214m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;251m\]:\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;81m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;251m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
