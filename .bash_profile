@@ -1,3 +1,7 @@
+# for ubuntu 18.04 desktop "mrPoopy" to switch between nvidia and intel gpu
+# sudo prime-select intel
+# sudo prime-select nvidia 
+
 # Setting PATH for Python 2.7 and for homebrew
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}:/usr/local/bin:$PATH"
