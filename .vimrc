@@ -15,13 +15,17 @@ set showcmd
 " Add your own changes below...
 set t_Co=256 "256 color
 set encoding=utf-8 "UTF-8 character encoding
-"set tabstop=4  "4 space tabs
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab "make tabs = 4 spaces
+
+"tab stuff
+set tabstop=4  "4 space tabs
+set shiftwidth=4 "shifting with > and < is 4 spaces
 set softtabstop=4  "Tab spaces in no hard tab mode
 set expandtab  " Expand tabs into spaces
+set smarttab   "insert blanks on tab
 set autoindent  "autoindent on new lines
+
 set showmatch  "Highlight matching braces
-set ruler  "Show bottom ruler
+"set ruler  "Show bottom ruler
 set equalalways  "Split windows equal size
 set formatoptions=croq  "Enable comment line auto formatting
 set wildignore+=*.o,*.obj,*.class,*.swp,*.pyc "Ignore junk files
@@ -34,14 +38,20 @@ set scrolloff=5  "Never scroll off
 set wildmode=longest,list  "Better unix-like tab completion
 "set cursorline  "Highlight current line
 set clipboard=unnamed  "Copy and paste from system clipboard
+
+" speed stuff for optimization
 set lazyredraw  "Don't redraw while running macros (faster)
+set ttyfast  "Speed up vim
+set regexpengine=1
+set noshowcmd
+set synmaxcol=200
+
 set autochdir  "Change directory to currently open file
 set nocompatible  "Kill vi-compatibility
 set wrap  "Visually wrap lines
 set linebreak  "Only wrap on 'good' characters for wrapping
 set backspace=indent,eol,start  "Better backspacing
 set linebreak  "Intelligently wrap long files
-set ttyfast  "Speed up vim
 set nostartofline "Vertical movement preserves horizontal position
 set pastetoggle=<F2> "toggles in and out of smart indenting
 
@@ -62,4 +72,4 @@ command W w
 command Q q
 
 colorscheme koehler
-au BufReadPost *.srp set syntax=c "force highlighting for serpent"
+"au BufReadPost *.srp set syntax=c "force highlighting for serpent

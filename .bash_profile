@@ -1,17 +1,29 @@
 # Setting PATH for Python 2.7 and for homebrew
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}:/usr/local/bin:$PATH"
+#PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}:/usr/local/bin:$PATH"
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+#PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+#export PATH
+
+
+#homebrew
+PATH="/usr/local/bin:$PATH"
 export PATH
+
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+source /usr/local/bin/virtualenvwrapper.sh
 
 #source the 349 stuff
 source ~/.bashrc
 
-#Virtualenv/VirtualenvWrapper
-source /usr/local/bin/virtualenvwrapper.sh
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-# export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+#export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 #export GREP_OPTIONS='--color=auto'
 unset GREP_OPTIONS
@@ -147,21 +159,9 @@ alias ftdi="sudo ftditerm.py -b 115200 --lf"
 # kill all instances of make openocd
 alias rip="killall -9 make openocd"
 
-
-
-
-
-[ -s "/Users/rsiewhew/.scm_breeze/scm_breeze.sh" ] && source "/Users/rsiewhew/.scm_breeze/scm_breeze.sh"
-
-
-
+#[ -s "/Users/rsiewhew/.scm_breeze/scm_breeze.sh" ] && source "/Users/rsiewhew/.scm_breeze/scm_breeze.sh"
 
 export PATH=$PATH:/Users/rsiewhew/bin
 export SERPENTPATH="/Users/rsiewhew/serpent/lib:/Users/rsiewhew/serpent/programs:/Users/rsiewhew/serpent/wxslib"
-
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
 
 export PATH="$HOME/.cargo/bin:$PATH"
