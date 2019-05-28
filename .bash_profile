@@ -1,6 +1,6 @@
 # for ubuntu 18.04 desktop "mrPoopy" to switch between nvidia and intel gpu
 # sudo prime-select intel
-# sudo prime-select nvidia 
+# sudo prime-select nvidia
 
 # Setting PATH for Python 2.7 and for homebrew
 # The orginal version is saved in .bash_profile.pysave
@@ -11,6 +11,7 @@
 #PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 #export PATH
 
+# something nice to install is cheat.sh --> https://github.com/chubin/cheat.sh
 
 #homebrew
 PATH="/usr/local/bin:$PATH"
@@ -153,15 +154,6 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-
-# for 349 to fix the stuff
-alias fixftdi="sudo kextunload -bundle-id com.apple.driver.AppleUSBFTDI"
-
-# setup for the ftditerm.py file
-alias ftdi="sudo ftditerm.py -b 115200 --lf"
-
-# kill all instances of make openocd
-alias rip="killall -9 make openocd"
 
 #[ -s "/Users/rsiewhew/.scm_breeze/scm_breeze.sh" ] && source "/Users/rsiewhew/.scm_breeze/scm_breeze.sh"
 
