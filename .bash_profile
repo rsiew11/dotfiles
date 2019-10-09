@@ -1,7 +1,3 @@
-# for ubuntu 18.04 desktop "mrPoopy" to switch between nvidia and intel gpu
-# sudo prime-select intel
-# sudo prime-select nvidia
-
 # Setting PATH for Python 2.7 and for homebrew
 # The orginal version is saved in .bash_profile.pysave
 #PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}:/usr/local/bin:$PATH"
@@ -13,22 +9,22 @@
 
 # something nice to install is cheat.sh --> https://github.com/chubin/cheat.sh
 
+
+export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
 #homebrew
 PATH="/usr/local/bin:$PATH"
 export PATH
 
 # virtualenv and virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
 
-#source the 349 stuff
-source ~/.bashrc
-
+export PYTHONPATH=$PYTHONPATH:/Users/rus003o/.virtualenvs/cv/lib/python3.6/site-packages/tensorflow/models/research:/Users/rus003o/.virtualenvs/cv/lib/python3.6/site-packages/tensorflow/models/research/slim
 
 export CLICOLOR=1
+#export TERM=xterm-256color
 export LSCOLORS=GxFxCxDxBxegedabagaced
-#export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 #export GREP_OPTIONS='--color=auto'
 unset GREP_OPTIONS
@@ -84,9 +80,6 @@ alias sudo='sudo '
 
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'sd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -155,9 +148,11 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
-#[ -s "/Users/rsiewhew/.scm_breeze/scm_breeze.sh" ] && source "/Users/rsiewhew/.scm_breeze/scm_breeze.sh"
-
-export PATH=$PATH:/Users/rsiewhew/bin
-export SERPENTPATH="/Users/rsiewhew/serpent/lib:/Users/rsiewhew/serpent/programs:/Users/rsiewhew/serpent/wxslib"
+#finding the tensorflow dir on work mac
+alias tfdir="cd /Users/rus003o/.virtualenvs/cv/lib/python3.6/site-packages/tensorflow/"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH="/usr/local/sbin:$PATH"
+
+source "/Users/rus003o/Documents/vim_stuff/gruvbox_256palette_osx.sh"
