@@ -1,6 +1,67 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" python autocompletion
+Plugin 'davidhalter/jedi-vim'
+
+" file directory navigation
+Plugin 'scrooloose/nerdtree.git'
+
+" gruvbox
+Plugin 'morhetz/gruvbox'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" mapping the jj to escape, and all of the possible mistakes that happen
+imap jk <Esc>
 imap jj <Esc>
 imap Jj <Esc>
 imap jJ <Esc>
+
+" use ctrl+hjkl for movement between vsplit windows
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" use CMD+hjkl for movement between vsplit windows as well
+"nnoremap <D-J> <C-W><C-J>
+"nnoremap <D-K> <C-W><C-K>
+"nnoremap <D-L> <C-W><C-L>
+"nnoremap <D-H> <C-W><C-H>
+
+" auto startup NERDTree
+"autocmd vimenter * NERDTree
+
+" use CMD + n to toggle NERDTree
+map <C-m> :NERDTreeToggle<CR>
+
+" auto close vim if only window is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Helpful information: cursor position in bottom right, line numbers on left
 set number
@@ -9,17 +70,19 @@ set cc=80 "80 char limit line
 " Indent as intelligently as vim knows how
 set smartindent
 
-" Show multicharacter commands as they are being typed
-set showcmd
-
 " Add your own changes below...
 set t_Co=256 "256 color
 set encoding=utf-8 "UTF-8 character encoding
 
-"tab stuff
+" tab stuff
 set tabstop=4  "4 space tabs
 set shiftwidth=4 "shifting with > and < is 4 spaces
 set softtabstop=4  "Tab spaces in no hard tab mode
+
+"set tabstop=2  "2 space tabs
+"set shiftwidth=2 "shifting with > and < is 2 spaces
+"set softtabstop=2  "Tab spaces in no hard tab mode
+
 set expandtab  " Expand tabs into spaces
 set smarttab   "insert blanks on tab
 set autoindent  "autoindent on new lines
@@ -71,5 +134,4 @@ command Wq wq
 command W w
 command Q q
 
-colorscheme koehler
-"au BufReadPost *.srp set syntax=c "force highlighting for serpent
+colorscheme gruvbox
