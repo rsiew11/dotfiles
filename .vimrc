@@ -10,14 +10,14 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" python autocompletion
-Plugin 'davidhalter/jedi-vim'
-
 " file directory navigation
 Plugin 'scrooloose/nerdtree.git'
 
 " gruvbox
 Plugin 'morhetz/gruvbox'
+
+" rust vim
+Plugin 'rust-lang/rust.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -57,8 +57,8 @@ nnoremap <C-H> <C-W><C-H>
 " auto startup NERDTree
 "autocmd vimenter * NERDTree
 
-" use CMD + n to toggle NERDTree
-map <C-m> :NERDTreeToggle<CR>
+" use CMD + m to toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 " auto close vim if only window is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -120,6 +120,18 @@ set pastetoggle=<F2> "toggles in and out of smart indenting
 
 " Strip whitespace from end of lines when writing file
 autocmd BufWritePre * :%s/\s\+$//e
+
+" java stuff --------------------------------------------
+let java_mark_braces_in_parens_as_errors=1
+let java_highlight_all=1
+let java_highlight_debug=1
+let java_highlight_java_lang_ids=1
+"let java_highlight_functions = "style"
+set filetype=java
+
+highlight link javaScopeDecl Statement
+highlight link javaType Type
+highlight link javaDocTags PreProc
 
 " Syntax highlighting and stuff
 filetype plugin indent on
