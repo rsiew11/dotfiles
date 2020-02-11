@@ -29,7 +29,10 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 #export GREP_OPTIONS='--color=auto'
 unset GREP_OPTIONS
 
-export PS1="\[\033[38;5;214m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;251m\]:\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;81m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;251m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+export PS1="\[\033[38;5;214m\][\A] \u\[\033[38;5;251m\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;81m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;251m\] |\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+#export PS1="[\A] \[\033[38;5;214m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;251m\] : \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;81m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;251m\] | \[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+#export PS1="\[\e[38;5;251m\][ \[\e[38;5;81m\]$? \[\e[38;33;251m\]\t \[\e[38;33;251m\]\u \[\e[38;5;81m\]\w \[\e[38;5;251m\]] \$ \[\e[38;5;15m\]"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -156,3 +159,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 source "/Users/rus003o/Documents/vim_stuff/gruvbox_256palette_osx.sh"
+
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
