@@ -1,24 +1,15 @@
-# Setting PATH for Python 2.7 and for homebrew
-# The orginal version is saved in .bash_profile.pysave
-#PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}:/usr/local/bin:$PATH"
-
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-#PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-#export PATH
 
 # something nice to install is cheat.sh --> https://github.com/chubin/cheat.sh
 
 
-export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
 #homebrew
 PATH="/usr/local/bin:$PATH"
 export PATH
 
 # virtualenv and virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/.virtualenvs
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+#source /usr/local/bin/virtualenvwrapper.sh
 
 export PYTHONPATH=$PYTHONPATH:/Users/rus003o/.virtualenvs/cv/lib/python3.6/site-packages/tensorflow/models/research:/Users/rus003o/.virtualenvs/cv/lib/python3.6/site-packages/tensorflow/models/research/slim
 
@@ -155,9 +146,11 @@ alias reload="exec $SHELL -l"
 alias tfdir="cd /Users/rus003o/.virtualenvs/cv/lib/python3.6/site-packages/tensorflow/"
 
 export PATH="$HOME/.cargo/bin:$PATH"
-
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/Users/scoobert/Library/Python/3.7/bin:$PATH"
 
-source "/Users/rus003o/Documents/vim_stuff/gruvbox_256palette_osx.sh"
+# spotify
+export SPOTIPY_CLIENT_ID=52d6e04129c948dc94cf7a7585b3f4a7
+export SPOTIPY_CLIENT_SECRET=58d16159da5b41b680889ba459fd234a
 
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES

@@ -1,1 +1,3 @@
-# terminal_setup
+## deez are my dotfiles for mac
+
+
