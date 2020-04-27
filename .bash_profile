@@ -20,10 +20,16 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 #export GREP_OPTIONS='--color=auto'
 unset GREP_OPTIONS
 
-export PS1="\[\033[38;5;214m\][\A] \u\[\033[38;5;251m\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;81m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;251m\] |\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-#export PS1="[\A] \[\033[38;5;214m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;251m\] : \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;81m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;251m\] | \[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+get_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+ORANGE='\[\033[38;5;214m\]'
+BLUE1='\[\033[38;5;81m\]'
+WHITE='\[\033[38;5;15m\]'
+BOLD='\[$(tput bold)\]\[$(tput sgr0)\]'
+SGR='\[$(tput sgr0)\]'
 
-#export PS1="\[\e[38;5;251m\][ \[\e[38;5;81m\]$? \[\e[38;33;251m\]\t \[\e[38;33;251m\]\u \[\e[38;5;81m\]\w \[\e[38;5;251m\]] \$ \[\e[38;5;15m\]"
+export PS1="${ORANGE}[\A]: ${BOLD}${BLUE1}\w${SGR}${ORANGE}\$(get_git_branch) ${SGR}${WHITE}| ${SGR}${WHITE}"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
