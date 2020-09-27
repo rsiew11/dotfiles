@@ -155,8 +155,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/Users/scoobert/Library/Python/3.7/bin:$PATH"
 
-# spotify
-export SPOTIPY_CLIENT_ID=52d6e04129c948dc94cf7a7585b3f4a7
-export SPOTIPY_CLIENT_SECRET=58d16159da5b41b680889ba459fd234a
-
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
