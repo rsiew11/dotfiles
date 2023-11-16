@@ -1,17 +1,7 @@
-
 # something nice to install is cheat.sh --> https://github.com/chubin/cheat.sh
-
 
 #homebrew
 PATH="/usr/local/bin:$PATH"
-export PATH
-
-# virtualenv and virtualenvwrapper
-#export WORKON_HOME=$HOME/.virtualenvs
-#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-#source /usr/local/bin/virtualenvwrapper.sh
-
-export PYTHONPATH=$PYTHONPATH:/Users/rus003o/.virtualenvs/cv/lib/python3.6/site-packages/tensorflow/models/research:/Users/rus003o/.virtualenvs/cv/lib/python3.6/site-packages/tensorflow/models/research/slim
 
 export CLICOLOR=1
 #export TERM=xterm-256color
@@ -43,7 +33,8 @@ shopt -s cdspell;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall;
 
-alias subl-theme="subl ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Color\ Scheme\ -\ Default/Solarized\ \(Dark\).tmTheme";
+#To avoid them accidentally linking against a Pyenv-provided Python
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 alias text='osascript textmessage.applescript';
 
@@ -148,11 +139,17 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
-#finding the tensorflow dir on work mac
-alias tfdir="cd /Users/rus003o/.virtualenvs/cv/lib/python3.6/site-packages/tensorflow/"
+# replace " " in filenames to _
+alias renamespace="for file in *; do mv "$file" `echo $file | tr ' ' '_'` ; done"
 
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/Users/scoobert/Library/Python/3.7/bin:$PATH"
 
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+eval "$(/opt/homebrew/bin/brew shellenv)"
+. "$HOME/.cargo/env"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
+## pyenv setup according to: https://github.com/pyenv/pyenv#homebrew-in-macos
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
