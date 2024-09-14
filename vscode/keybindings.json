@@ -49,5 +49,13 @@
         "key": "ctrl+f",
         "command": "-extension.vim_ctrl+f",
         "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.previousEditor"
     }
 ]
