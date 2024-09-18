@@ -34,5 +34,9 @@
     "[python]": {
         "editor.formatOnType": true
     },
+    "workbench.colorCustomizations" {
+        "editor.selectionBackground": "#135564",
+        "editor.selectionHighlightBackground": "#13556451"
+    },
     "rust-analyzer.discoverProjectRunner": null
 }
