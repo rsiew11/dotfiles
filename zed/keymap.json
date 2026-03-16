@@ -7,32 +7,59 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
+    "context": "Editor",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    }
+      "cmd-l": "agent::ToggleFocus",
+      "ctrl-;": "terminal_panel::ToggleFocus",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+    },
   },
   {
-    "context": "Editor && vim_mode == insert && !menu",
+    "context": "ProjectPanel",
     "bindings": {
-      "j k": ["vim::SwitchMode", "Normal"],
-      "J k": ["vim::SwitchMode", "Normal"],
-      "j j": ["vim::SwitchMode", "Normal"],
-      "J j": ["vim::SwitchMode", "Normal"]
-    }
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "cmd-l": "agent::ToggleFocus",
+      "ctrl-;": "workspace::ToggleRightDock",
+    },
   },
   {
-    "context": "Editor || Terminal || Chat || Notifications",
+    "context": "AgentPanel",
     "bindings": {
-      "ctrl-;": "terminal_panel::ToggleFocus"
-    }
+      "cmd-l": "workspace::ToggleRightDock",
+    },
   },
   {
-    "context": "Editor && vim_mode != insert",
+    "context": "ContextEditor > Editor",
     "bindings": {
-      "ctrl-h": "pane::ActivatePrevItem",
-      "ctrl-l": "pane::ActivateNextItem"
-    }
-  }
+      "cmd-l": "workspace::ToggleRightDock",
+    },
+  },
+  {
+    "context": "AcpThread > Editor",
+    "bindings": {
+      "cmd-l": "workspace::ToggleRightDock",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-l": "agent::ToggleFocus",
+      "ctrl-;": "workspace::ToggleRightDock",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      // Tab Navigation
+      "ctrl-shift-h": "pane::ActivatePreviousItem",
+      "ctrl-shift-l": "pane::ActivateNextItem",
+    },
+  },
 ]
-
