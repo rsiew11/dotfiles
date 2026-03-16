@@ -7,20 +7,48 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-  "features": {
-    "inline_completion_provider": "none"
-  },
-  "assistant": {
-    "default_model": {
-      "provider": "google",
-      "model": "gemini-1.5-flash"
+  "agent_servers": {
+    "cursor": {
+      "type": "registry"
     },
-    "version": "2"
+    "codex-acp": {
+      "type": "registry"
+    },
+    "gemini": {
+      "type": "registry"
+    }
+  },
+  "edit_predictions": {
+    "provider": "none",
+  },
+  "ssh_connections": [
+    {
+      "host": "deb.box",
+      "username": "rei",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/rei/dev"],
+        },
+      ],
+    },
+  ],
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "enable_thinking": false
+    },
+    "default_model": {
+      "enable_thinking": true,
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+    },
   },
   "base_keymap": "VSCode",
   "telemetry": {
     "metrics": true,
-    "diagnostics": true
+    "diagnostics": true,
   },
   "vim_mode": true,
   "ui_font_size": 16,
@@ -28,13 +56,12 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Dark Soft"
+    "dark": "Gruvbox Dark Soft",
   },
   "terminal": {
-    "dock": "right"
+    "dock": "right",
   },
   "buffer_font_features": {
-    "calt": false
-  }
+    "calt": false,
+  },
 }
-
