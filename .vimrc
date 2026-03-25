@@ -66,7 +66,7 @@ set smartcase  "Search using smartcase
 set incsearch  "Start searching immediately
 set scrolloff=5  "Never scroll off
 set wildmode=longest,list  "Better unix-like tab completion
-"set cursorline  "Highlight current line
+set cursorline  "Highlight current line
 set clipboard=unnamed  "Copy and paste from system clipboard
 
 " speed stuff for optimization
