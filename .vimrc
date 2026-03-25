@@ -1,39 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" file directory navigation
-Plugin 'scrooloose/nerdtree.git'
-
-" gruvbox
-Plugin 'morhetz/gruvbox'
-
-" rust vim
-Plugin 'rust-lang/rust.vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " mapping the jj to escape, and all of the possible mistakes that happen
@@ -121,14 +88,6 @@ set pastetoggle=<F2> "toggles in and out of smart indenting
 " Strip whitespace from end of lines when writing file
 autocmd BufWritePre * :%s/\s\+$//e
 
-" java stuff --------------------------------------------
-let java_mark_braces_in_parens_as_errors=1
-let java_highlight_all=1
-let java_highlight_debug=1
-let java_highlight_java_lang_ids=1
-"let java_highlight_functions = "style"
-set filetype=java
-
 highlight link javaScopeDecl Statement
 highlight link javaType Type
 highlight link javaDocTags PreProc
@@ -146,4 +105,4 @@ command Wq wq
 command W w
 command Q q
 
-colorscheme gruvbox
+colorscheme koehler
